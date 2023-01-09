@@ -5,30 +5,36 @@ class Program
     static void Main(string[] args)
     {
         Random randomGenerator = new Random();
-        int magic = randomGenerator.Next(1, 101);
-
+        int magic; 
+        int count = 0;
         int guess;
 
         do
         {
-            Console.WriteLine("What is your guess?");
-            guess = int.Parse(Console.ReadLine());
+            do
+            {
+                magic = randomGenerator.Next(1, 101);
+                Console.WriteLine("What is your guess?");
+                guess = int.Parse(Console.ReadLine());
 
-            if (guess > magic)
-            {
-                Console.WriteLine("Too high!");
-            }
-            else if (guess < magic)
-            {
-                Console.WriteLine("Too low!");
-            }
-            else if (guess == magic)
-            {
-                Console.WriteLine("You got it!");
-            }    
-        } while (guess != magic);
-            
-            
+                count ++;
 
+                if (guess > magic)
+                {
+                    Console.WriteLine("Too high!");
+                }
+                else if (guess < magic)
+                {
+                    Console.WriteLine("Too low!");
+                }
+                else if (guess == magic)
+                {
+                    Console.WriteLine($"You got it! It took you {count} guesses.");
+                }    
+            } while (guess != magic);
+
+            Console.WriteLine("Would you like to play again? (y/n) ");
+        } while (Console.ReadLine() == "y");
+            
     }
 }
