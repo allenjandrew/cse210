@@ -1,0 +1,41 @@
+Class Journal
+Attributes:
+- list of entries
+Methods:
+- display
+- save entries
+- load entries
+- add new entry
+
+Class Entry
+Attributes:
+- date
+- prompt
+- response
+Methods:
+- display entry
+
+Class PromptGenerator
+Attributes:
+- list of prompts
+Methods:
+- get random prompt
+- add new prompt
+
+Class Menu (main)
+Attributes:
+- Journal
+- PromptGenerator
+Methods:
+- display Menu
+    menu options:
+    - write (menu._PromptGenerator.getrandomprompt; save as class entry inside of class journal)
+    - display (access the journal's display method which accesses each entry's display method)
+    - save (access the journal's save method - also give option to save to previously loaded file vs save as new file)
+    
+
+
+
+
+
+
