@@ -1,41 +1,46 @@
 Class Journal
 Attributes:
-- list of entries
+    list of entries
 Methods:
-- display
-- save entries
-- load entries
-- add new entry
+    display
+    save entries
+    load entries
+    add new entry
 
 Class Entry
 Attributes:
-- date
-- prompt
-- response
+    date
+    prompt
+    response
 Methods:
-- display entry
+    display entry
 
 Class PromptGenerator
 Attributes:
-- list of prompts
+    list of prompts
 Methods:
-- get random prompt
-- add new prompt
+    get random prompt
+    add new prompt
 
 Class Menu (main)
 Attributes:
-- Journal
-- PromptGenerator
+    Journal
+    PromptGenerator
 Methods:
-- display Menu
-    menu options:
-    - write (menu._PromptGenerator.getrandomprompt; save as class entry inside of class journal)
-    - display (access the journal's display method which accesses each entry's display method)
-    - save (access the journal's save method - also give option to save to previously loaded file vs save as new file)
+    display Menu
+        menu options:
+            write (menu._PromptGenerator.getrandomprompt; save as class entry inside of class journal)
+            display (access the journal's display method which accesses each entry's display method)
+            save (access the journal's save method - also give option to save to previously loaded file vs save as new file)
     
-
-
-
+List promptsList
+    "Who was the most interesting person I interacted with today?"
+    "What was the best part of my day?"
+    "How did I see the hand of the Lord in my life today?"
+    "What was the strongest emotion I felt today?"
+    "If I had one thing I could do over today, what would it be?"
+    "What was the most important task I accomplished today?"
+    "How did I reach out and serve someone today?"
 
 
 
