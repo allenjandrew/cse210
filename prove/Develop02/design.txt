@@ -1,19 +1,25 @@
 Class Journal
 Attributes:
+    name
+    file location
+    notes (list of strings)
     list of entries
 Methods:
-    display
-    save entries
-    load entries
-    add new entry
+    display journal
+    save journal
+    save journal as
+    load journal
+    create free write
+    create entry from prompt
 
 Class Entry
 Attributes:
     date
     prompt
-    response
+    response (body)
 Methods:
     display entry
+    save entry
 
 Class PromptGenerator
 Attributes:
@@ -21,6 +27,8 @@ Attributes:
 Methods:
     get random prompt
     add new prompt
+    save prompt list
+    load prompt list
 
 Class Menu (main)
 Attributes:
