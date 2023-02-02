@@ -1,0 +1,12 @@
+##NAME
+foo
+##NOTES
+bar
+##ENTRY
+2/2/2023 11:20 AM
+"What was the most important task I accomplished today?"
+I finished this program!
+##ENTRY
+2/2/2023 11:20 AM
+none
+Let's see what else I can do.

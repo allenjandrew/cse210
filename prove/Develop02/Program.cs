@@ -1,10 +1,15 @@
 using System;
+using Develop02.Classes;
 
-class Program
+namespace Develop02
 {
-    static void Main(string[] args)
+    public class Program
     {
-        Menu mainMenu = new Menu();
-        mainMenu.Run();
+        static void Main(string[] args)
+        {
+            Menu mainMenu = new Menu();
+            mainMenu.StartUp();
+            mainMenu.Run();
+        }
     }
 }
