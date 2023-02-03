@@ -1,12 +1,20 @@
 ##NAME
-foo
+Foo
 ##NOTES
-bar
+Bar
 ##ENTRY
 2/2/2023 11:20 AM
-"What was the most important task I accomplished today?"
+What was the most important task I accomplished today?
 I finished this program!
 ##ENTRY
 2/2/2023 11:20 AM
 none
 Let's see what else I can do.
+##ENTRY
+2/2/2023 2:46 PM
+Who was the most interesting person I interacted with today?
+Elijah Miller
+##ENTRY
+2/2/2023 2:47 PM
+If I had one thing I could do over today, what would it be?
+redo my journal project
