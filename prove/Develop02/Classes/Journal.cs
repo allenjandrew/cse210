@@ -12,9 +12,7 @@ namespace Develop02.Classes
         public List<Entry> _entryList = new List<Entry>();
 
         // Constructor
-        public Journal()
-        {
-        }
+        public Journal() { }
 
         // Methods
         public void Display()
@@ -63,9 +61,9 @@ namespace Develop02.Classes
                     importDest = "entry";
 
                     Entry eImporter = new Entry();
-                    eImporter._dateTime = lines[i+1].Trim();
-                    eImporter._prompt = lines[i+2].Trim();
-                    eImporter._body = lines[i+3].Trim();
+                    eImporter._dateTime = lines[i + 1].Trim();
+                    eImporter._prompt = lines[i + 2].Trim();
+                    eImporter._body = lines[i + 3].Trim();
 
                     this._entryList.Add(eImporter);
                 }
@@ -77,7 +75,6 @@ namespace Develop02.Classes
                 {
                     this._notes.Add(stripped);
                 }
-                
             }
 
             return this;
@@ -100,7 +97,6 @@ namespace Develop02.Classes
                 {
                     entry.SaveTo(outputFile);
                 }
-
             }
             return this;
         }
@@ -158,6 +154,5 @@ namespace Develop02.Classes
         {
             _notes.Add(newNote);
         }
-
     }
 }

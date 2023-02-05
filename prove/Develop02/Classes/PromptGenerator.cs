@@ -10,9 +10,7 @@ namespace Develop02.Classes
         public List<string> _promptList = new List<string>();
 
         // Constructor
-        public PromptGenerator()
-        {
-        }
+        public PromptGenerator() { }
 
         // Methods
         public string GetRandom()
@@ -29,7 +27,7 @@ namespace Develop02.Classes
             return prompt;
         }
 
-        public PromptGenerator Save()//string filename=_filename)
+        public PromptGenerator Save() //string filename=_filename)
         {
             using (StreamWriter outputFile = new StreamWriter(_filename))
             {
@@ -37,17 +35,16 @@ namespace Develop02.Classes
                 {
                     outputFile.WriteLine(prompt);
                 }
-
             }
-            
+
             // _filename = filename;
             return this;
         }
 
-        public PromptGenerator Load()//string filename=_filename)
+        public PromptGenerator Load() //string filename=_filename)
         {
             string[] lines = System.IO.File.ReadAllLines(_filename);
-            
+
             foreach (var line in lines)
             {
                 _promptList.Add(line.Trim());
@@ -56,6 +53,5 @@ namespace Develop02.Classes
             // _filename = filename;
             return this;
         }
-
     }
 }

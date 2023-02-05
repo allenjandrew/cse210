@@ -1,4 +1,3 @@
-
 namespace Develop02.Classes
 {
     // Define class
@@ -9,9 +8,7 @@ namespace Develop02.Classes
         public PromptGenerator _prompter = new PromptGenerator();
 
         // Constructor
-        public Menu()
-        {
-        }
+        public Menu() { }
 
         // Methods
         public void StartUp()
@@ -32,7 +29,9 @@ namespace Develop02.Classes
                     Console.Write("> ");
                     newJournal._name = Console.ReadLine();
 
-                    Console.WriteLine($"Optionally, add any number of notes to {newJournal._name}. Press <return> to add a note. Press <return> on blank to move on.");
+                    Console.WriteLine(
+                        $"Optionally, add any number of notes to {newJournal._name}. Press <return> to add a note. Press <return> on blank to move on."
+                    );
                     while (true)
                     {
                         Console.Write("> ");
@@ -46,13 +45,12 @@ namespace Develop02.Classes
 
                     _journal = newJournal;
                     break;
-                
+
                 case 2: // Open journal from file …
                     Console.WriteLine("Please enter the filename: ");
                     Console.Write("> ");
-                    _journal.Load(Console.ReadLine());                    
+                    _journal.Load(Console.ReadLine());
                     break;
-                
             }
         }
 
@@ -63,11 +61,15 @@ namespace Develop02.Classes
             // string name;
             string newNote;
             string newPrompt;
-            
+
             while (runApp)
             {
-                Console.WriteLine($"You are currently accessing {_journal._name}. What would you like to do?");
-                Console.WriteLine("1. Free write\n2. Write from prompt\n3. Display journal\n4. Save file\n5. Save as …\n6. Open file …\n7. Create new journal\n8. Add new note\n9. Add new prompt\n10. Exit");
+                Console.WriteLine(
+                    $"You are currently accessing {_journal._name}. What would you like to do?"
+                );
+                Console.WriteLine(
+                    "1. Free write\n2. Write from prompt\n3. Display journal\n4. Save file\n5. Save as …\n6. Open file …\n7. Create new journal\n8. Add new note\n9. Add new prompt\n10. Exit"
+                );
                 Console.Write("> ");
                 int choice = int.Parse(Console.ReadLine());
 
@@ -80,34 +82,36 @@ namespace Develop02.Classes
                     case 2: // Write from prompt
                         _journal.CreateFromPrompt(_prompter);
                         break;
-                    
+
                     case 3: // Display journal
                         _journal.Display();
                         break;
-                    
+
                     case 4: // Save file
                         _journal.Save();
                         break;
-                    
+
                     case 5: // Save as …
                         Console.WriteLine("Please enter the filename: ");
                         Console.Write("> ");
                         _journal.SaveAs(Console.ReadLine());
                         break;
-                    
+
                     case 6: // Open file …
                         Console.WriteLine("Please enter the filename: ");
                         Console.Write("> ");
                         _journal.Load(Console.ReadLine());
                         break;
-                    
+
                     case 7: // Create new journal
                         Journal newJournal = new Journal();
                         Console.WriteLine("Please enter a name for your Journal: ");
                         Console.Write("> ");
                         newJournal._name = Console.ReadLine();
 
-                        Console.WriteLine($"Optionally, add any number of notes to {newJournal._name}. Press <return> to add a note. Press <return> on blank to move on.");
+                        Console.WriteLine(
+                            $"Optionally, add any number of notes to {newJournal._name}. Press <return> to add a note. Press <return> on blank to move on."
+                        );
                         while (true)
                         {
                             Console.Write("> ");
@@ -121,7 +125,7 @@ namespace Develop02.Classes
 
                         _journal = newJournal;
                         break;
-                    
+
                     case 8: // Add new note
                         Console.WriteLine("Enter your note:");
                         Console.Write("> ");
@@ -131,7 +135,7 @@ namespace Develop02.Classes
                             _journal.AddNote(newNote);
                         }
                         break;
-                    
+
                     case 9: // Add new prompt
                         Console.WriteLine("Enter the new prompt:");
                         Console.Write("> ");
@@ -141,17 +145,16 @@ namespace Develop02.Classes
                             _prompter.AddPrompt(newPrompt);
                         }
                         break;
-                    
+
                     case 10: // Exit
                         Console.WriteLine("You have exited the app.");
                         runApp = false;
                         break;
-                    
+
                     default:
                         break;
                 }
             }
         }
-
     }
 }

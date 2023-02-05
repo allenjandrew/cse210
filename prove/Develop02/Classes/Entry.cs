@@ -11,9 +11,7 @@ namespace Develop02.Classes
         public string _body = "";
 
         // Constructor
-        public Entry()
-        {
-        }
+        public Entry() { }
 
         // Methods
         public void Display()
