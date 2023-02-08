@@ -1,0 +1,32 @@
+Scripture Memorizer Program
+
+Scripture Class:
+Attributes:
+    _scripture: List<Word> (presumably of the scripture)
+    _reference: Reference
+    _isHiddenList: List<int> (list of indexes of words that are hidden)
+Method:
+    GetRandomScripture (pulls random scripture from dictionary (or list))
+    HideRandomWords (choose random indexes and calls Word.HideWord)
+    ClearConsole (clears console)
+    DisplayScripture (prints off the reference and each word)
+    ImportScripture (creates Reference and List<Word> from provided text)
+
+Reference Class:
+Attributes:
+    _book: string
+    _chapter: int
+    _verse: List<int>
+Methods:
+    getReference(string reference)
+
+Word Class:
+Attributes:
+    _singleWord: string
+    _isHidden: false (bool)
+Constructor:
+    Word(_singleWord)
+Method:
+    HideWord (count number of characters and convert them to underscores)
+    GetSingleWord (returns value of _singleWord)
+    GetIsHidden (returns value of _isHidden)
