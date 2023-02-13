@@ -4,7 +4,6 @@ Scripture Class:
 Attributes:
     _scripture: List<Word> (presumably of the scripture)
     _reference: Reference
-    _isHiddenList: List<int> (list of indexes of words that are hidden)
 Method:
     GetRandomScripture (pulls random scripture from dictionary (or list))
     HideRandomWords (choose random indexes and calls Word.HideWord)
