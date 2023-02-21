@@ -17,7 +17,8 @@ Attributes:
     _chapter: int
     _verse: List<int>
 Methods:
-    getReference(string reference)
+    GetReference(string reference)
+    DisplayReference
 
 Word Class:
 Attributes:

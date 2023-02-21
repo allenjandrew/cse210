@@ -5,7 +5,7 @@ namespace Develop03.Classes
     {
         // Attributes
         private string _singleWord;
-        private bool _isHidden;
+        private bool _isHidden = false;
 
         // Constructors
         public Word(string singleWord)
@@ -14,13 +14,13 @@ namespace Develop03.Classes
         }
 
         // Getters/Setters
-        public Word GetSingleWord()
+        public string GetSingleWord()
         {
             return _singleWord;
         }
         public bool GetIsHidden()
         {
-            return _isHidden();
+            return _isHidden;
         }
 
         // Methods
@@ -28,10 +28,16 @@ namespace Develop03.Classes
         {
             if (!_isHidden)
             {
-                string newWord;
+                string newWord = "";
                 foreach (var letter in _singleWord)
                 {
-                    newWord += "_";
+                    if (char.IsLetter(letter))
+                    {
+                        newWord += "_";
+                    }
+                    else {
+                        newWord += letter;
+                    }
                 }
                 _singleWord = newWord;
                 return _isHidden = true;

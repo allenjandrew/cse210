@@ -4,18 +4,35 @@ namespace Develop03.Classes
     public class Scripture
     {
         // Attributes
-        private List<Word> _scriptureWordList = new List<Word>();
-        private Reference _reference = new Reference();
+        private List<Word> _wordList = new List<Word>();
+        private Reference _reference;
 
         // Constructors
-        public Scripture()
+        public Scripture(string inputString)
         {
+            // Split inputString
+            List<string> divided = new List<string>(inputString.Split(" - "));
+            // Get reference
+            _reference = new Reference(divided[0]);
+            // Remove reference from string list
+            divided.RemoveAt(0);
+            // Put the verse back together, in case it was split
+            string text = string.Join(" - ", divided);
+            // Split the verse into words
+            string[] wordsList = text.Split(" ");
+            // Create a Word instance for each word
+            foreach (string wordIt in wordsList)
+            {
+                Word word = new Word(wordIt);
+                _wordList.Add(word);
+            }
+
         }
 
         // Getters/Setters
-        public List<Word> GetScriptureWordList()
+        public List<Word> GetwordList()
         {
-            return _scriptureWordList;
+            return _wordList;
         }
 
         public Reference GetReference()
@@ -24,25 +41,40 @@ namespace Develop03.Classes
         }
 
         // Methods
-        public void HideRandomWords(int numTimes)
+        public bool HideRandomWords(int numTimes)
         {
             Random tRex = new Random();
+            bool hidEnough;
+            bool noneLeft = true;
             for (int i=0; i<numTimes; i++)
             {
-                done = false;
-                while (!done)
+                hidEnough = false;
+                noneLeft = true;
+                while (!hidEnough)
                 {
-                    done = _scriptureWordList[tRex.Next(_scriptureWordList.Count)].HideWord();
+                    hidEnough = _wordList[tRex.Next(_wordList.Count)].HideWord();
+                }
+                foreach (Word wordIt in _wordList)
+                {
+                    if (!wordIt.GetIsHidden())
+                    {
+                        noneLeft = false;
+                    }
+                }
+                if (noneLeft)
+                {
+                    return noneLeft;
                 }
             }
+            return noneLeft;
         }
 
         public void DisplayScripture()
         {
             _reference.DisplayReference();
-            foreach (var word in _scriptureWordList)
+            foreach (var word in _wordList)
             {
-                Console.Write(word.GetSingleWord(), " ");
+                Console.Write(word.GetSingleWord() + " ");
             }
             Console.WriteLine();
         }
