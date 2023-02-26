@@ -8,6 +8,8 @@ namespace Develop03.Classes
         private Reference _reference;
 
         // Constructors
+        public Scripture() { }
+
         public Scripture(string inputString)
         {
             // Split inputString
@@ -26,7 +28,6 @@ namespace Develop03.Classes
                 Word word = new Word(wordIt);
                 _wordList.Add(word);
             }
-
         }
 
         // Getters/Setters
@@ -46,7 +47,7 @@ namespace Develop03.Classes
             Random tRex = new Random();
             bool hidEnough;
             bool noneLeft = true;
-            for (int i=0; i<numTimes; i++)
+            for (int i = 0; i < numTimes; i++)
             {
                 hidEnough = false;
                 noneLeft = true;
@@ -71,6 +72,7 @@ namespace Develop03.Classes
 
         public void DisplayScripture()
         {
+            Console.Clear();
             _reference.DisplayReference();
             foreach (var word in _wordList)
             {

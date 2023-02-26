@@ -3,7 +3,7 @@ namespace Develop03.Classes
     // Define Class
     public class Word
     {
-        // Attributes
+        // Attributes\
         private string _singleWord;
         private bool _isHidden = false;
 
@@ -18,6 +18,7 @@ namespace Develop03.Classes
         {
             return _singleWord;
         }
+
         public bool GetIsHidden()
         {
             return _isHidden;
@@ -35,7 +36,8 @@ namespace Develop03.Classes
                     {
                         newWord += "_";
                     }
-                    else {
+                    else
+                    {
                         newWord += letter;
                     }
                 }
@@ -46,7 +48,6 @@ namespace Develop03.Classes
             {
                 return false;
             }
-
         }
     }
 }
