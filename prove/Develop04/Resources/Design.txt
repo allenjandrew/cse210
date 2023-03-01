@@ -10,9 +10,9 @@ Class Activity
     Methods:
         LoadingScreen(int): void // creates loading animation for ___ seconds
         CountDownFrom(int): void // displays numbers counting down from ___ seconds
-        StartActivity(): void // prints out summary w/ name and description; calls base.LoadingScreen(5)
+        StartActivity(): void // prints out summary w/ name and description; calls LoadingScreen(5)
         SetDurationFromInput(): void // sets _duration from user input
-        EndMessage(): void // prints out summary of exercise w/ name and duration; calls base.LoadingScreen(5)
+        EndMessage(): void // prints out summary of exercise w/ name and duration; calls LoadingScreen(5)
 
 Class BreathingActivity : Activity
     Attributes:
