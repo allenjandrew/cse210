@@ -1,6 +1,8 @@
 using System;
 using Develop04.Classes;
 
+// To exceed the requirements, I created a special loading animation.
+
 class Program
 {
     static void Main(string[] args)
