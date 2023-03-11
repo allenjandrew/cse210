@@ -7,24 +7,33 @@ namespace Develop04.Classes
         // none
 
         // Constructors
-        BreathingActivity()
+        public BreathingActivity()
             : base(
                 "Breathing Activity",
-                "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing."
-            )
-        {
-            base.SetDurationFromInput();
-        }
+                "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing."
+            ) { }
 
         // Methods
-        public void BreatheIn() // display "Breathe in..." and call base.CountDownFrom(8)
+        public override void Execute()
         {
-            return;
+            StartActivity();
+            int timeLeft = _duration;
+            while (timeLeft > 6)
+            {
+                BreatheInAndOut();
+                timeLeft -= 10;
+            }
+            EndActivity();
         }
 
-        public void BreatheOut() // display "Breathe out..." and call base.CountDownFrom(12)
+        private void BreatheInAndOut() // display "Breathe in..." and call base.CountDownFrom(4)
         {
-            return;
+            Console.Write("Breathe in...");
+            CountDownFrom(5);
+            Console.WriteLine();
+            Console.Write("Now breathe out...");
+            CountDownFrom(5);
+            Console.Write("\n\n");
         }
     }
 }

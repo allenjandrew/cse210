@@ -1,0 +1,40 @@
+Class Goal
+    Attributes:
+        _name: string
+        _description: string
+        _points: int
+    Constructors:
+        Goal()
+    Methods:
+        RecordProgress(): void
+        IsComplete(): bool
+        ToString(): string
+
+Class SimpleGoal: Goal
+
+Class EternalGoal: Goal
+
+Class ChecklistGoal: Goal
+
+Class GoalRepository
+    Attributes:
+        _goals: List<Goal>
+    Methods:
+        Add(Goal): void
+        Remove(Goal): Goal
+        GetAll(): List<Goal>
+
+TextGoalRepository
+JSONGoalRepository
+InMenuGoalRepository
+
+Command
+    Methods:
+        Execute(): void
+
+AddGoalCommand
+ViewProgressCommand
+RemoveGoalCommand
+ViewMenuCommand
+ViewGoalsCommand
+UpdateGoalCommand
