@@ -3,18 +3,26 @@ Class Goal
         _name: string
         _description: string
         _points: int
+        _timesCompleted: int
+        _earned: int
     Constructors:
-        Goal()
+        Goal(_name, _description, _points)
     Methods:
         RecordProgress(): void
         IsComplete(): bool
+        MarkComplete(): void
+        MarkIncomplete(): void
         ToString(): string
 
 Class SimpleGoal: Goal
+    Attributes:
 
 Class EternalGoal: Goal
 
 Class ChecklistGoal: Goal
+    Attributes:
+        _timesToComplete: int
+        _completionBonus: int
 
 Class GoalRepository
     Attributes:
@@ -23,18 +31,24 @@ Class GoalRepository
         Add(Goal): void
         Remove(Goal): Goal
         GetAll(): List<Goal>
+        Save(): void
+        Load(): GoalRepository
+        GetScore(): int
 
-TextGoalRepository
-JSONGoalRepository
-InMenuGoalRepository
 
-Command
-    Methods:
-        Execute(): void
+//
+    TextGoalRepository
+    JSONGoalRepository
+    InMenuGoalRepository
 
-AddGoalCommand
-ViewProgressCommand
-RemoveGoalCommand
-ViewMenuCommand
-ViewGoalsCommand
-UpdateGoalCommand
+    Command
+        Methods:
+            Execute(): void
+
+    AddGoalCommand
+    ViewProgressCommand
+    RemoveGoalCommand
+    ViewMenuCommand
+    ViewGoalsCommand
+    UpdateGoalCommand
+//
