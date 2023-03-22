@@ -10,19 +10,19 @@ namespace Develop05.Classes
         public Repository() { }
 
         // Methods
-        public virtual List<Goal> GetAll()
+        public List<Goal> GetAll()
         {
-            throw new Exception("not implemented in base class.");
+            return _goals;
         }
 
-        public virtual void Add(Goal goal)
+        public void Add(Goal goal)
         {
-            throw new Exception("not implemented in base class.");
+            _goals.Add(goal);
         }
 
         public virtual void Remove(Goal goal)
         {
-            throw new Exception("not implemented in base class.");
+            _goals.Remove(goal);
         }
     }
 }

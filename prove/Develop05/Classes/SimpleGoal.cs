@@ -15,7 +15,7 @@ namespace Develop05.Classes
 
         public override string ToString()
         {
-            String s = "";
+            string s = "";
             s += $"name: {GetName()}\n";
             s += $"desc: {GetDesc()}\n";
             s += $"points: {GetPoints()}\n";

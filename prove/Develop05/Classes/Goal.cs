@@ -9,6 +9,7 @@ namespace Develop05.Classes
         protected int _points = 0;
         protected int _earned = 0;
         protected bool _complete = false;
+        protected int _timesCompleted = 0;
 
         // Constructor
         public Goal(string name, string desc, int points)
@@ -60,6 +61,11 @@ namespace Develop05.Classes
         public virtual void AddPoints(int points)
         {
             _earned += points;
+        }
+
+        public virtual string ToString()
+        {
+            throw new Exception("Method 'ToString' not available in base class 'Goal'")
         }
     }
 }

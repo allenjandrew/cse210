@@ -26,7 +26,18 @@ namespace Develop05.Classes
 
         public override string ToString()
         {
-            return $"The simple goal is complete: {_complete}";
+            string s = "";
+            s += $"name: {GetName()}\n";
+            s += $"desc: {GetDesc()}\n";
+            s += $"points: {GetPoints()}\n";
+            s += $"earned: {GetEarned()}\n";
+            return s;
+        }
+
+        public override string GetSummary()
+        {
+            string s = "";
+            s += $""
         }
     }
 }
