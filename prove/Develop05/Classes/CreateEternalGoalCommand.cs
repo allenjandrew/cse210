@@ -1,10 +1,10 @@
 namespace Develop05.Classes
 {
     // Define class
-    public class CreateSimpleGoalCommand : Command
+    public class CreateEternalGoalCommand : Command
     {
         // Constructors
-        public CreateSimpleGoalCommand(Repository repo)
+        public CreateEternalGoalCommand(Repository repo)
             : base(repo) { }
 
         // Methods
@@ -16,7 +16,7 @@ namespace Develop05.Classes
             string description = Console.ReadLine();
             Console.Write("Point value: ");
             int points = int.Parse(Console.ReadLine());
-            Goal goal = new SimpleGoal(name, description, points);
+            Goal goal = new EternalGoal(name, description, points);
             _repository.Add(goal);
             // return goal;
         }

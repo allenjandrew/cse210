@@ -1,10 +1,10 @@
 namespace Develop05.Classes
 {
     // Define class
-    public class CreateSimpleGoalCommand : Command
+    public class CreateChecklistGoalCommand : Command
     {
         // Constructors
-        public CreateSimpleGoalCommand(Repository repo)
+        public CreateChecklistGoalCommand(Repository repo)
             : base(repo) { }
 
         // Methods
@@ -16,7 +16,17 @@ namespace Develop05.Classes
             string description = Console.ReadLine();
             Console.Write("Point value: ");
             int points = int.Parse(Console.ReadLine());
-            Goal goal = new SimpleGoal(name, description, points);
+            Console.Write("Times to complete: ");
+            int timesToComplete = int.Parse(Console.ReadLine());
+            Console.Write("Completion Bonus: ");
+            int completionBonus = int.Parse(Console.ReadLine());
+            Goal goal = new ChecklistGoal(
+                timesToComplete,
+                completionBonus,
+                name,
+                description,
+                points
+            );
             _repository.Add(goal);
             // return goal;
         }

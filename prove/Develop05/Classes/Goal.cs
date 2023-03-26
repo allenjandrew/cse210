@@ -4,40 +4,55 @@ namespace Develop05.Classes
     public class Goal
     {
         // Attributes
-        private string _name = "";
-        private string _desc = "";
-        protected int _points = 0;
+        private string _name;
+        private string _description;
+        private int _points;
         protected int _earned = 0;
-        protected bool _complete = false;
         protected int _timesCompleted = 0;
+        private bool _complete = false;
 
-        // Constructor
+        // Constructors
         public Goal(string name, string desc, int points)
         {
             _name = name;
-            _desc = desc;
+            _description = desc;
             _points = points;
         }
 
-        // Getters
-        public string GetName()
+        // Getters & Setters
+        protected string GetName()
         {
             return _name;
         }
 
-        public string GetDesc()
+        protected string GetDescription()
         {
-            return _desc;
+            return _description;
         }
 
-        public virtual int GetPoints()
+        protected int GetPoints()
         {
             return _points;
         }
 
-        public virtual int GetEarned()
+        protected int GetEarned()
         {
             return _earned;
+        }
+
+        protected void AddEarned(int points)
+        {
+            _earned += points;
+        }
+
+        protected int GetTimesCompleted()
+        {
+            return _timesCompleted;
+        }
+
+        protected void IncreaseTimesCompleted()
+        {
+            _timesCompleted++;
         }
 
         public virtual bool IsComplete()
@@ -45,27 +60,30 @@ namespace Develop05.Classes
             return _complete;
         }
 
-        public void MarkComplete()
+        protected void MarkComplete()
         {
             _complete = true;
         }
 
-        public void MarkIncomplete()
+        protected void MarkIncomplete()
         {
             _complete = false;
         }
 
         // Methods
-        public virtual void RecordProgress() { }
-
-        public virtual void AddPoints(int points)
+        public virtual void RecordProgress()
         {
-            _earned += points;
+            throw new Exception("Method 'RecordProgress' not available in base class 'Goal'");
         }
 
-        public virtual string ToString()
+        public override string ToString()
         {
-            throw new Exception("Method 'ToString' not available in base class 'Goal'")
+            throw new Exception("Method 'ToString' not available in base class 'Goal'");
+        }
+
+        public virtual string GetSummary()
+        {
+            throw new Exception("Method 'GetSummary' not available in base class 'Goal'");
         }
     }
 }

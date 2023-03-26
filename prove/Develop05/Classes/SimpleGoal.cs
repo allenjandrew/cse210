@@ -2,26 +2,28 @@ namespace Develop05.Classes
 {
     public class SimpleGoal : Goal
     {
-        // Constructor
-        public SimpleGoal(string name, string desc, int points)
-            : base(name, desc, points) { }
+        // Constructors
+        public SimpleGoal(string name, string description, int points)
+            : base(name, description, points) { }
 
         // Methods
         public override void RecordProgress()
         {
-            _earned = GetPoints();
-            _complete = true;
+            if (!IsComplete())
+            {
+                AddEarned(GetPoints());
+                MarkComplete();
+            }
         }
 
         public override string ToString()
         {
-            string s = "";
-            s += $"name: {GetName()}\n";
-            s += $"desc: {GetDesc()}\n";
-            s += $"points: {GetPoints()}\n";
-            s += $"earned: {GetEarned()}\n";
-            s += $"complete: {IsComplete()}\n";
-            return s;
+            return $"[{(IsComplete() ? "X" : " ")}] {GetName()} - {GetDescription()}";
+        }
+
+        public override string GetSummary()
+        {
+            return $"Name: {GetName()}\nDescription: {GetDescription()}\nPoints: {GetPoints()}\nEarned: {GetEarned()}\nComplete: {IsComplete()}";
         }
     }
 }

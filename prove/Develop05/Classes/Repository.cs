@@ -20,7 +20,7 @@ namespace Develop05.Classes
             _goals.Add(goal);
         }
 
-        public virtual void Remove(Goal goal)
+        public void Remove(Goal goal)
         {
             _goals.Remove(goal);
         }

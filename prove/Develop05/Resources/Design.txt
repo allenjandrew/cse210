@@ -5,6 +5,7 @@ Class Goal
         _points: int
         _timesCompleted: int
         _earned: int
+        _isComplete: bool
     Constructors:
         Goal(_name, _description, _points)
     Methods:
@@ -15,14 +16,19 @@ Class Goal
         ToString(): string
 
 Class SimpleGoal: Goal
-    Attributes:
+    Constructors:
+        SimpleGoal() : base()
 
 Class EternalGoal: Goal
+    Constructors:
+        EternalGoal() : base()
 
 Class ChecklistGoal: Goal
     Attributes:
         _timesToComplete: int
         _completionBonus: int
+    Constructors:
+        ChecklistGoal(_timesToComplete, _completionBonus) : base()
 
 Class GoalRepository
     Attributes:
