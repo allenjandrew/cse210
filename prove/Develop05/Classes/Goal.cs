@@ -19,6 +19,23 @@ namespace Develop05.Classes
             _points = points;
         }
 
+        public Goal(
+            string name,
+            string desc,
+            int points,
+            int earned,
+            int timesCompleted,
+            bool isComplete
+        )
+        {
+            _name = name;
+            _description = desc;
+            _points = points;
+            _earned = earned;
+            _timesCompleted = timesCompleted;
+            _complete = isComplete;
+        }
+
         // Getters & Setters
         protected string GetName()
         {
@@ -35,7 +52,7 @@ namespace Develop05.Classes
             return _points;
         }
 
-        protected int GetEarned()
+        public int GetEarned()
         {
             return _earned;
         }
@@ -84,6 +101,11 @@ namespace Develop05.Classes
         public virtual string GetSummary()
         {
             throw new Exception("Method 'GetSummary' not available in base class 'Goal'");
+        }
+
+        public virtual string SaveString()
+        {
+            throw new Exception("Method 'SaveString' not available in base class 'Goal'");
         }
     }
 }

@@ -42,40 +42,44 @@ class Program
                 }
                 case "2":
                 {
-                    
+                    repo.ListGoals();
                     break;
                 }
                 case "3":
                 {
+                    repo.Save();
                     break;
                 }
                 case "4":
                 {
+                    repo.Load();
                     break;
                 }
                 case "5":
                 {
+                    repo.RecordGoalProgress();
                     break;
                 }
                 case "6":
                 {
+                    Console.WriteLine("Program ended successfully.");
                     break;
                 }
                 default:
                 {
-                    Console.WriteLine("Please input a number from 1 to 6.")
+                    Console.WriteLine("Please input a number from 1 to 6.");
                     break;
                 }
             }
         }
 
-        Goal simpleGoal = new SimpleGoal("Exercise", "I want to exercise once, tomorrow.", 1000);
-        Console.WriteLine(simpleGoal.ToString());
-        repo.Add(simpleGoal);
-        int numberOfGoals = repo.GetAll().Count;
-        Console.WriteLine($"There are {numberOfGoals} goals in the system.");
+        // Goal simpleGoal = new SimpleGoal("Exercise", "I want to exercise once, tomorrow.", 1000);
+        // Console.WriteLine(simpleGoal.ToString());
+        // repo.Add(simpleGoal);
+        // int numberOfGoals = repo.GetAll().Count;
+        // Console.WriteLine($"There are {numberOfGoals} goals in the system.");
 
-        simpleGoal.RecordProgress();
-        Console.WriteLine(simpleGoal.ToString());
+        // simpleGoal.RecordProgress();
+        // Console.WriteLine(simpleGoal.ToString());
     }
 }

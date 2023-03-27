@@ -21,11 +21,11 @@ namespace Develop05.Classes
             Console.Write("Completion Bonus: ");
             int completionBonus = int.Parse(Console.ReadLine());
             Goal goal = new ChecklistGoal(
-                timesToComplete,
-                completionBonus,
                 name,
                 description,
-                points
+                points,
+                timesToComplete,
+                completionBonus
             );
             _repository.Add(goal);
             // return goal;

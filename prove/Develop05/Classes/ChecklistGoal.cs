@@ -8,13 +8,29 @@ namespace Develop05.Classes
 
         // Constructors
         public ChecklistGoal(
-            int timesToComplete,
-            int completionBonus,
             string name,
             string description,
-            int points
+            int points,
+            int timesToComplete,
+            int completionBonus
         )
             : base(name, description, points)
+        {
+            _timesToComplete = timesToComplete;
+            _completionBonus = completionBonus;
+        }
+
+        public ChecklistGoal(
+            string name,
+            string desc,
+            int points,
+            int earned,
+            int timesCompleted,
+            bool isComplete,
+            int timesToComplete,
+            int completionBonus
+        )
+            : base(name, desc, points, earned, timesCompleted, isComplete)
         {
             _timesToComplete = timesToComplete;
             _completionBonus = completionBonus;
@@ -42,7 +58,12 @@ namespace Develop05.Classes
 
         public override string GetSummary()
         {
-            return $"Name: {GetName()}\nDescription: {GetDescription()}\nPoints: {GetPoints()}\nEarned: {GetEarned()}\nTimes Completed: {GetTimesCompleted()}\nTimes To Complete: {_timesToComplete}";
+            return $"Name: {GetName()}\nDescription: {GetDescription()}\nPoints: {GetPoints()}\nEarned: {GetEarned()}\nTimes Completed: {GetTimesCompleted()}\nTimes To Complete: {_timesToComplete}\nCompletion Bonus: {_completionBonus}";
+        }
+
+        public override string SaveString()
+        {
+            return $"3##{GetName()}##{GetDescription()}##{GetPoints()}##{GetEarned()}##{GetTimesCompleted()}##{IsComplete()}##{_timesToComplete}##{_completionBonus}";
         }
     }
 }

@@ -1,0 +1,4 @@
+1##do this##if you want to##30##30##1##True
+1##do that##if you can##40##0##0##False
+2##run around##run around in a circle##20##60##3##False
+3##throw down##just be freaking cool##10##20##2##False##10##50
