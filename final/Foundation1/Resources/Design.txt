@@ -1,0 +1,21 @@
+Class Video
+    Attributes:
+        _title: string
+        _author: string
+        _length: int
+        _comments: List<Comment>
+    Constructors:
+        Video(_title, _author, _length)
+    Methods:
+        GetNumComments(): int
+        Display(): void
+        AddComment(Comment): void
+
+Class Comment
+    Attributes:
+        _author: string
+        _text: string
+    Constructors:
+        Comment(_author, _text)
+    Methods:
+        Display(): void
