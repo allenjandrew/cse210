@@ -1,0 +1,47 @@
+Class Product
+    Attributes:
+        _name: string
+        _id: int
+        _price: double
+        _quantity: int
+    Constructors:
+        Product(_name, _id, _price, _quantity)
+    Methods:
+        CalculateCost(): double
+        ToString(): string
+
+Class Customer
+    Attributes:
+        _name: string
+        _address: Address
+    Constructors:
+        Customer(_name, _address)
+    Methods:
+        LivesInUSA(): bool
+        ToString(): string
+    
+Class Address
+    Attributes:
+        _streetAddress: string
+        _city: string
+        _stateOrProvince: string
+        _country: string
+    Constructors:
+        Address(_streetAddress, _city, _stateOrProvince, _country)
+    Methods:
+        IsInUSA(): bool
+        ToString(): string
+
+Class Order
+    Attributes:
+        _customer: Customer
+        _products: List<Product>
+    Constructors:
+        Order(_customer, _products)
+    Methods:
+        CalculateTotalCost(): double
+        ChooseShipping(): double
+        CreatePackingLabel(): string
+        CreateShippingLabel(): string
+        Display(): void
+
