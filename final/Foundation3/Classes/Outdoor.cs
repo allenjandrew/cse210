@@ -1,9 +1,3 @@
-// Class Outdoor : Event
-//     Attributes:
-//         _weatherForecast: string
-//     Constructors:
-//         Outdoor(_weatherForecast) : base(_eventType="Outdoor")
-
 namespace Foundation3.Classes
 {
     // Define Class

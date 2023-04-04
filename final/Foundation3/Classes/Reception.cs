@@ -1,10 +1,3 @@
-// Class Reception : Event
-//     Attributes:
-//         _attendees: int
-//         _rsvpEmail: string
-//     Constructors:
-//         Reception(_attendees) : base(_eventType="Reception")
-
 namespace Foundation3.Classes
 {
     // Define Class

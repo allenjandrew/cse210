@@ -1,30 +1,15 @@
-// Class Event
-//     Attributes:
-//         _title: string
-//         _eventType: string
-//         _description: string
-//         _date: string
-//         _time: string
-//         _address: Address
-//     Constructors:
-//         Event(_title, _eventType, _description, _date, _time, _address)
-//     Methods:
-//     StandardDetails(): string
-//     FullDetails(): virtual string
-//     ShortDetails(): string
-
 namespace Foundation3.Classes
 {
     // Define Class
     class Event
     {
         // Attributes
-        protected string _title;
-        protected string _description;
-        protected string _date;
-        protected string _time;
-        protected Address _address;
-        protected string _eventType;
+        private string _title;
+        private string _description;
+        private string _date;
+        private string _time;
+        private Address _address;
+        private string _eventType;
 
         // Constructors
         public Event(

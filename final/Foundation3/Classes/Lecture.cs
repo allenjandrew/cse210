@@ -1,10 +1,3 @@
-// Class Lecture : Event
-//     Attributes:
-//         _speaker: string
-//         _capacity: int
-//     Constructors:
-//         Lecture(_speaker, _capacity) : base(_eventType="Lecture")
-
 namespace Foundation3.Classes
 {
     // Define Class
