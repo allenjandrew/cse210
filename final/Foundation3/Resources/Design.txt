@@ -1,0 +1,68 @@
+Class Event
+    Attributes:
+        _title: string
+        _eventType: string
+        _description: string
+        _date: string
+        _time: string
+        _address: Address
+    Constructors:
+        Event(_title, _eventType, _description, _date, _time, _address)
+    Methods:
+    StandardDetails(): string
+    FullDetails(): virtual string
+    ShortDetails(): string
+
+Class Lecture : Event
+    Attributes:
+        _speaker: string
+        _capacity: int
+    Constructors:
+        Lecture(_speaker, _capacity) : base(_eventType="Lecture")
+
+Class Reception : Event
+    Attributes:
+        _attendees: int
+        _rsvpEmail: string
+    Constructors:
+        Reception(_attendees) : base(_eventType="Reception")
+
+Class Outdoor : Event
+    Attributes:
+        _weatherForecast: string
+    Constructors:
+        Outdoor(_weatherForecast) : base(_eventType="Outdoor")
+
+Class Address
+    Attributes:
+        _streetAddress: string
+        _city: string
+        _stateOrProvince: string
+        _country: string
+    Constructors:
+        Address(_streetAddress, _city, _stateOrProvince, _country)
+    Methods:
+        ToString(): string
+
+Class Command
+    Attributes:
+    Constructors:
+        Command()
+    Methods:
+        Execute(): virtual Event
+
+Class CreateLectureCommand: Command
+    Attributes:
+    Constructors:
+        CreateLectureCommand() : base()
+
+Class CreateReceptionCommand: Command
+    Attributes:
+    Constructors:
+        CreateLectureCommand() : base()
+
+Class CreateOutdoorCommand: Command
+    Attributes:
+    Constructors:
+        CreateLectureCommand() : base()
+
