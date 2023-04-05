@@ -1,0 +1,30 @@
+Class Exercise
+    Attributes:
+        _date: string
+        _length: int
+        _exerciseType: string
+    Constructors:
+        Exercise(_date, _length, _exerciseType)
+    Methods:
+        GetDistance(): virtual double
+        GetSpeed(): virtual double
+        GetPace(): virtual double
+        GetSummary(): string
+
+Class Running : Exercise
+    Attributes:
+        _distance: double
+    Constructors:
+        Running(_distance) : base()
+
+Class Cycling : Exercise
+    Attributes:
+        _speed: double
+    Constructors:
+        Cycling(_speed) : base()
+
+Class Swimming : Exercise
+    Attributes:
+        _laps: double
+    Constructors:
+        Swimming(_laps) : base()
